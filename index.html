@@ -22,30 +22,31 @@
         .header {
             position: fixed; top: 0; left: 0; width: 100%;
             z-index: 1000;
-            padding: 16px 56px;
+            padding: 12px 48px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(255,255,255,0.9);
+            background: rgba(255,255,255,0.92);
             backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
         }
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 12px;
         }
         .logo-icon {
-            width: 44px; height: 44px;
+            width: 36px; height: 36px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
             flex-shrink: 0;
+            overflow: hidden;
         }
         .logo-icon img {
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
         }
         .logo-text {
@@ -55,22 +56,22 @@
         .logo-slogan {
             font-size: 14px;
             color: #b8962e;
-            font-weight: 500;
-            letter-spacing: 1.5px;
-            padding-left: 16px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            padding-left: 14px;
             border-left: 2px solid #d4af37;
         }
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 36px;
+            gap: 28px;
             list-style: none;
         }
         .nav-links a {
-            font-size: 14px;
+            font-size: 13px;
             color: #666;
             transition: color 0.3s;
-            padding-bottom: 4px;
+            padding-bottom: 3px;
             border-bottom: 2px solid transparent;
             letter-spacing: 1.5px;
             font-weight: 500;
@@ -80,7 +81,7 @@
             border-bottom-color: #d4af37;
         }
 
-        /* ===== Hero ===== */
+        /* ===== Hero 首屏 ===== */
         .hero {
             position: relative; z-index: 1;
             min-height: 100vh;
@@ -88,338 +89,360 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 120px 40px 60px;
+            padding: 60px 56px 36px;
             background: linear-gradient(150deg, #f5f6fa 0%, #eef0f5 40%, #e6e8f0 100%);
         }
-        .hero-badge {
-            display: inline-block;
-            padding: 6px 24px;
-            border: 1.5px solid #d4af37;
-            border-radius: 100px;
-            font-size: 12px;
-            letter-spacing: 3px;
-            color: #b8962e;
-            margin-bottom: 32px;
-            background: rgba(212, 175, 55, 0.06);
-            font-weight: 600;
+        .hero-inner {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 28px;
         }
-        .hero h1 {
-            font-size: clamp(42px, 6.5vw, 78px);
+        .hero-headline { text-align: center; }
+        .hero-headline .big {
+            font-size: clamp(32px, 4.8vw, 58px);
             font-weight: 800;
-            line-height: 1.15;
-            letter-spacing: 4px;
-            margin-bottom: 16px;
+            line-height: 1.2;
+            letter-spacing: 2px;
             color: #1a1a2e;
         }
-        .hero h1 .gold {
+        .hero-headline .big .gold {
             background: linear-gradient(90deg, #b8962e, #d4af37, #b8962e);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .hero-sub {
-            font-size: clamp(16px, 1.6vw, 22px);
-            font-weight: 400;
-            color: #666;
-            max-width: 680px;
-            margin: 0 auto 40px;
-            letter-spacing: 4px;
-            line-height: 1.7;
-        }
-        .hero-actions {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .btn-primary {
-            padding: 14px 42px;
-            background: linear-gradient(135deg, #b8962e, #d4af37);
-            color: #fff;
-            font-weight: 700; font-size: 15px;
-            border-radius: 100px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            letter-spacing: 2px;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(212,175,55,0.3);
-        }
-        .btn-outline {
-            padding: 14px 42px;
-            border: 2px solid #d4af37;
+        .hero-section-label {
+            font-size: 17px;
+            font-weight: 700;
             color: #b8962e;
-            font-weight: 600; font-size: 15px;
-            border-radius: 100px;
-            transition: background 0.3s;
-            letter-spacing: 2px;
-            background: transparent;
-            cursor: pointer;
-        }
-        .btn-outline:hover {
-            background: rgba(212,175,55,0.06);
+            letter-spacing: 6px;
+            text-align: center;
+            margin-bottom: 6px;
         }
 
-        /* ===== Sections ===== */
-        .section {
-            position: relative; z-index: 1;
-            padding: 80px 56px 90px;
+        /* 八大产品线 */
+        .hero-products-wrap { width: 100%; }
+        .hero-products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
         }
-        .section-title {
+        .hero-product-card {
+            background: rgba(255,255,255,0.88);
+            border: 1px solid #e4e6ee;
+            border-radius: 12px;
+            padding: 16px 10px 12px;
             text-align: center;
-            margin-bottom: 48px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
         }
-        .section-title h2 {
-            font-size: clamp(24px, 3vw, 32px);
+        .hero-product-card:hover {
+            transform: translateY(-3px);
+            border-color: #d4af37;
+            box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+        }
+        .hero-product-card .icon { font-size: 26px; display: block; margin-bottom: 6px; }
+        .hero-product-card h4 {
+            font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
+            color: #1a1a2e; margin-bottom: 10px; line-height: 1.35;
+        }
+        .hero-product-card .btn-download-mini {
+            display: inline-flex; align-items: center; gap: 4px;
+            padding: 5px 16px; border: 1px solid #d4af37; border-radius: 100px;
+            color: #b8962e; font-size: 11px; transition: all 0.25s;
+            font-weight: 500; background: transparent; cursor: pointer;
+        }
+        .hero-product-card .btn-download-mini:hover { background: rgba(212,175,55,0.1); }
+        .hero-product-card .btn-download-mini svg { width: 12px; height: 12px; fill: currentColor; }
+
+        /* 应用领域 */
+        .hero-fields-wrap { width: 100%; }
+        .hero-fields-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-top: 4px;
+        }
+        .hero-field-card {
+            background: rgba(255,255,255,0.88);
+            border: 1px solid #e4e6ee;
+            border-radius: 12px;
+            padding: 14px 8px 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+        .hero-field-card:hover {
+            transform: translateY(-3px);
+            border-color: #d4af37;
+            box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+        }
+        .hero-field-card .field-img {
+            width: 100%; height: 70px; border-radius: 8px; margin-bottom: 8px;
+            background: #e8eaf0; display: flex; align-items: center;
+            justify-content: center; font-size: 28px; color: #b8962e; overflow: hidden;
+        }
+        .hero-field-card .field-img img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-field-card .field-img .placeholder-icon { font-size: 28px; opacity: 0.6; }
+        .hero-field-card span { display: block; font-size: 13px; color: #555; letter-spacing: 0.5px; font-weight: 500; }
+        .scroll-hint { font-size: 10px; color: #ccc; letter-spacing: 2px; text-align: center; padding: 2px 0; }
+
+        /* ===== 第二屏：招商 + 联系我们（合并一屏） ===== */
+        .section-second {
+            position: relative; z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 56px;
+            background: linear-gradient(180deg, #dce0ec 0%, #c8cddd 30%, #b0b6ca 60%, #9ca2b8 100%);
+        }
+        .second-inner {
+            width: 100%;
+            max-width: 1100px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* 第二屏顶部标题 */
+        .second-header {
+            text-align: center;
+        }
+        .second-header h2 {
+            font-size: clamp(24px, 3vw, 36px);
             font-weight: 700;
             letter-spacing: 4px;
             color: #1a1a2e;
         }
-        .section-title h2 .gold { color: #b8962e; }
-        .section-title p {
-            color: #999;
-            font-size: 14px;
-            letter-spacing: 3px;
-            margin-top: 12px;
-            font-weight: 400;
-        }
-        .section-title .line {
-            width: 48px; height: 3px;
+        .second-header h2 .gold { color: #b8962e; }
+        .second-header .line {
+            width: 50px; height: 3px;
             background: linear-gradient(90deg, #b8962e, #d4af37);
             margin: 12px auto 0;
             border-radius: 2px;
         }
 
-        /* ===== Products ===== */
-        .products { background: #fff; }
-        .products-grid {
+        /* 招商 + 联系左右布局 */
+        .second-body {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 20px;
-            max-width: 1100px;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: stretch;
+        }
+
+        /* 招募卡片 — 浅色风格 */
+        .recruit-card {
+            background: rgba(255,255,255,0.85);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 20px;
+            padding: 40px 32px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            backdrop-filter: blur(8px);
+        }
+        .recruit-card:hover {
+            border-color: rgba(212,175,55,0.5);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+        }
+        .recruit-card .icon-big {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+        .recruit-card h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a2e;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+        .recruit-card .tagline {
+            color: #b8962e;
+            font-size: 13px;
+            letter-spacing: 4px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .recruit-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.9;
+            max-width: 380px;
             margin: 0 auto;
         }
-        .product-card {
-            background: #fff;
-            border: 1px solid #e8eaf0;
-            border-radius: 16px;
-            padding: 32px 24px 24px;
-            text-align: center;
-            transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-        }
-        .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 40px rgba(0,0,0,0.06);
-            border-color: #d4af37;
-        }
-        .product-card .icon {
-            font-size: 32px;
-            margin-bottom: 14px;
-            display: block;
-        }
-        .product-card h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            letter-spacing: 1px;
-            color: #1a1a2e;
-        }
-        .btn-download {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 7px 20px;
-            border: 1px solid #d4af37;
+        .recruit-card .btn-contact {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 10px 32px;
+            border: 1px solid #b8962e;
             border-radius: 100px;
             color: #b8962e;
             font-size: 13px;
-            transition: all 0.25s;
-            font-weight: 500;
-            background: transparent;
-            cursor: pointer;
-        }
-        .btn-download:hover {
-            background: rgba(212,175,55,0.08);
-        }
-        .btn-download svg { width: 14px; height: 14px; fill: currentColor; }
-
-        /* ===== Military Fields ===== */
-        .military { background: #f5f6fa; }
-        .fields-row {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            max-width: 960px;
-            margin: 0 auto;
-        }
-        .field-item {
-            text-align: center;
-            width: 100px;
-        }
-        .field-item .icon {
-            width: 64px; height: 64px;
-            margin: 0 auto 12px;
-            background: #fff;
-            border: 1px solid #e0e3ec;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-        }
-        .field-item:hover .icon {
-            border-color: #d4af37;
-            box-shadow: 0 8px 24px rgba(212,175,55,0.12);
-            transform: scale(1.1);
-        }
-        .field-item span {
-            font-size: 14px;
-            color: #666;
-            letter-spacing: 1px;
-            font-weight: 500;
-        }
-
-        /* ===== Recruitment ===== */
-        .recruitment { background: #fff; }
-        .recruit-box {
-            max-width: 720px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, #fafbfe 0%, #f0f2f8 100%);
-            border: 1px solid #e8eaf0;
-            border-radius: 20px;
-            padding: 48px 40px;
-            text-align: center;
-        }
-        .recruit-box h3 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: 3px;
-            color: #1a1a2e;
-        }
-        .recruit-box .tagline {
-            color: #b8962e;
-            font-size: 15px;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        .recruit-box p {
-            color: #888;
-            font-size: 15px;
-            line-height: 1.8;
-            max-width: 460px;
-            margin: 0 auto;
-        }
-
-        /* ===== Contact ===== */
-        .contact { background: #f5f6fa; }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .contact-card {
-            background: #fff;
-            border: 1px solid #e8eaf0;
-            border-radius: 16px;
-            padding: 28px 30px;
-            transition: border-color 0.3s, box-shadow 0.3s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-        }
-        .contact-card:hover {
-            border-color: #d4af37;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-        }
-        .contact-card h4 {
-            font-size: 15px;
-            color: #b8962e;
-            margin-bottom: 16px;
             letter-spacing: 2px;
-            font-weight: 600;
-        }
-        .contact-card .item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
-            color: #555;
-            font-size: 15px;
-        }
-        .contact-card .item:last-child { margin-bottom: 0; }
-        .contact-card .item .label {
-            color: #bbb;
-            font-size: 12px;
-            min-width: 32px;
-            font-weight: 400;
-        }
-        .contact-card .item a {
-            color: #b8962e;
-            transition: opacity 0.3s;
+            transition: all 0.3s;
             font-weight: 500;
         }
-        .contact-card .item a:hover { opacity: 0.7; }
-        .contact-address {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 20px;
-            background: #fff;
-            border: 1px solid #e8eaf0;
-            border-radius: 12px;
-            color: #888;
-            font-size: 14px;
-            letter-spacing: 1px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        .recruit-card .btn-contact:hover {
+            background: rgba(212,175,55,0.12);
         }
-        .contact-address a {
+
+        /* 联系卡片 — 浅色风格 */
+        .contact-card-light {
+            background: rgba(255,255,255,0.85);
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 20px;
+            padding: 40px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            backdrop-filter: blur(8px);
+        }
+        .contact-card-light:hover {
+            border-color: rgba(212,175,55,0.4);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+        }
+        .contact-card-light .contact-title {
+            font-size: 20px;
+            font-weight: 700;
             color: #b8962e;
+            letter-spacing: 3px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .contact-card-light .contact-person {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .contact-card-light .contact-person:last-of-type {
+            border-bottom: none;
+        }
+        .contact-card-light .contact-person .avatar {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: rgba(212,175,55,0.1);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px; flex-shrink: 0;
+        }
+        .contact-card-light .contact-person .info .name {
+            color: #1a1a2e;
             font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .contact-card-light .contact-person .info .contact-link {
+            color: #888;
+            font-size: 13px;
+        }
+        .contact-card-light .contact-person .info .contact-link a {
+            color: #b8962e;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        .contact-card-light .contact-person .info .contact-link a:hover { opacity: 0.7; }
+        .contact-card-light .contact-addr {
+            text-align: center;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            color: #888;
+            font-size: 13px;
+            letter-spacing: 1px;
         }
 
         /* ===== Footer ===== */
         .footer {
             position: relative; z-index: 1;
             text-align: center;
-            padding: 24px 40px;
-            border-top: 1px solid #e8eaf0;
+            padding: 18px 40px;
+            border-top: 1px solid rgba(0,0,0,0.04);
             font-size: 12px;
-            color: #ccc;
+            color: #aaa;
             letter-spacing: 1.5px;
+            background: #f5f6fa;
+        }
+
+        /* ===== 悬浮联系方式 (右下角) ===== */
+        .float-contact {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 9999;
+        }
+        .float-contact .contact-panel {
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212,175,55,0.25);
+            border-radius: 16px;
+            padding: 18px 20px;
+            width: 280px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+        }
+        .float-contact .contact-panel .panel-title {
+            font-size: 14px; font-weight: 700; color: #b8962e;
+            letter-spacing: 2px; margin-bottom: 12px;
+            padding-bottom: 10px; border-bottom: 1px solid #f0f0f0;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .float-contact .contact-panel .panel-item {
+            display: flex; align-items: center; gap: 10px;
+            margin-bottom: 8px; color: #555; font-size: 13px;
+        }
+        .float-contact .contact-panel .panel-item:last-child { margin-bottom: 0; }
+        .float-contact .contact-panel .panel-item .icon {
+            width: 28px; height: 28px; background: rgba(212,175,55,0.08);
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 13px; flex-shrink: 0;
+        }
+        .float-contact .contact-panel .panel-item a {
+            color: #b8962e; font-weight: 500; transition: opacity 0.3s;
+        }
+        .float-contact .contact-panel .panel-item a:hover { opacity: 0.7; }
+        .float-contact .contact-panel .panel-item .name {
+            color: #888; font-size: 11px;
         }
 
         /* ===== Animations ===== */
         .fade-in {
-            opacity: 0;
-            transform: translateY(36px);
-            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+            opacity: 0; transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
 
         /* ===== Responsive ===== */
+        @media (max-width: 1024px) {
+            .hero-products-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-fields-grid { grid-template-columns: repeat(2, 1fr); }
+            .second-body { grid-template-columns: 1fr; gap: 24px; }
+        }
         @media (max-width: 768px) {
-            .header { padding: 12px 20px; }
+            .header { padding: 10px 16px; }
             .nav-links { display: none; }
             .logo-slogan { display: none; }
-            .hero { padding: 100px 20px 40px; min-height: 92vh; }
-            .section { padding: 50px 20px 60px; }
-            .products-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
-            .contact-grid { grid-template-columns: 1fr; gap: 16px; }
-            .fields-row { gap: 24px; }
-            .field-item { width: 80px; }
-            .field-item .icon { width: 52px; height: 52px; font-size: 22px; }
-            .recruit-box { padding: 32px 24px; }
+            .hero { padding: 56px 16px 20px; }
+            .hero-inner { gap: 20px; }
+            .hero-products-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .hero-product-card { padding: 12px 8px; }
+            .hero-fields-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .hero-field-card .field-img { height: 56px; }
+            .section-second { padding: 40px 20px; }
+            .second-body { gap: 20px; }
+            .recruit-card { padding: 28px 20px; }
+            .contact-card-light { padding: 28px 20px; }
         }
         @media (max-width: 480px) {
-            .products-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: clamp(32px, 10vw, 48px); }
+            .hero-headline .big { font-size: clamp(26px, 7vw, 32px); }
         }
     </style>
 </head>
@@ -432,186 +455,221 @@
             <span class="logo-slogan">电容应用，有困难找永铭</span>
         </div>
         <ul class="nav-links">
-            <li><a href="#products">产品线</a></li>
-            <li><a href="#military">军工领域</a></li>
-            <li><a href="#contact">联系我们</a></li>
+            <li><a href="#second">招商合作</a></li>
         </ul>
     </header>
 
-    <!-- Hero -->
+    <!-- ===== Hero 首屏 ===== -->
     <section class="hero" id="home">
-        <div class="hero-badge">✦ 国产化替代解决方案专家</div>
-        <h1>
-            <span class="gold">军工及高可靠领域</span><br>
-            电容器国产化替代解决方案
-        </h1>
-        <p class="hero-sub">专注为军工领域提供全品类电容器 · 国产自主 · 可靠交付</p>
-        <div class="hero-actions">
-            <a href="#products" class="btn-primary">查看产品线</a>
-            <a href="#contact" class="btn-outline">联系军工市场部</a>
+        <div class="hero-inner">
+            <div class="hero-headline">
+                <div class="big">
+                    <span class="gold">专注于为军工及高可靠领域</span><br>
+                    提供各类电容器国产化替代解决方案
+                </div>
+            </div>
+
+            <!-- 八大产品线 -->
+            <div class="hero-products-wrap">
+                <div class="hero-section-label">✦ 八大产品线 ✦</div>
+                <div class="hero-products-grid">
+                    <div class="hero-product-card">
+                        <span class="icon">⚡</span>
+                        <h4>液态铝电解电容器</h4>
+                        <button class="btn-download-mini" onclick="alert('手册下载中…')">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
+                            手册
+                        </button>
+                    </div>
+                    <div class="hero-product-card">
+                        <span class="icon">🔋</span>
+                        <h4>双电层超级电容</h4>
+                        <button class="btn-download-mini" onclick="alert('手册下载中…')">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
+                            手册
+                        </button>
+                    </div>
+                    <div class="hero-product-card">
+                        <span class="icon">🧪</span>
+                        <h4>高分子固态铝电解电容器</h4>
+                        <button class="btn-download-mini" onclick="alert('手册下载中…')">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
+                            手册
+                        </button>
+                    </div>
+                    <div class="hero-product-card">
+                        <span class="icon">🔬</span>
+                        <h4>混合型超级电容</h4>
+                        <button class="btn-download-mini" onclick="alert('手册下载中…')">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
+                            手册
+                        </button>
+                    </div>
+                    <div class="hero-product-card">
+                        <span class="icon">⚙️</span>
+                        <h4>高分子混合动力铝电解电容器</h4>
+                        <button class="btn-download-mini" onclick="alert('手册下载中…')">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
+                            手册
+                        </button>
+                    </div>
+                    <div class="hero-product-card">
+                        <span class="icon">📐</span>
+                        <h4>叠层高分子固态铝电解电容器</h4>
+                        <button class="btn-download-mini" onclick="alert('手册下载中…')">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
+                            手册
+                        </button>
+                    </div>
+                    <div class="hero-product-card">
+                        <span class="icon">💡</span>
+                        <h4>薄膜电容器</h4>
+                        <button class="btn-download-mini" onclick="alert('手册下载中…')">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
+                            手册
+                        </button>
+                    </div>
+                    <div class="hero-product-card">
+                        <span class="icon">🔶</span>
+                        <h4>导电高分子钽电解电容器</h4>
+                        <button class="btn-download-mini" onclick="alert('手册下载中…')">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
+                            手册
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 应用领域 -->
+            <div class="hero-fields-wrap">
+                <div class="hero-section-label">✦ 应用领域 ✦</div>
+                <div class="hero-fields-grid">
+                    <div class="hero-field-card">
+                        <div class="field-img"><span class="placeholder-icon">🛩️</span></div>
+                        <span>航空电子</span>
+                    </div>
+                    <div class="hero-field-card">
+                        <div class="field-img"><span class="placeholder-icon">🚀</span></div>
+                        <span>导弹系统</span>
+                    </div>
+                    <div class="hero-field-card">
+                        <div class="field-img"><span class="placeholder-icon">🛰️</span></div>
+                        <span>卫星通信</span>
+                    </div>
+                    <div class="hero-field-card">
+                        <div class="field-img"><span class="placeholder-icon">⚓</span></div>
+                        <span>舰船电子</span>
+                    </div>
+                    <div class="hero-field-card">
+                        <div class="field-img"><span class="placeholder-icon">📡</span></div>
+                        <span>雷达系统</span>
+                    </div>
+                    <div class="hero-field-card">
+                        <div class="field-img"><span class="placeholder-icon">🔫</span></div>
+                        <span>武器装备</span>
+                    </div>
+                    <div class="hero-field-card">
+                        <div class="field-img"><span class="placeholder-icon">🛡️</span></div>
+                        <span>电子对抗</span>
+                    </div>
+                    <div class="hero-field-card">
+                        <div class="field-img"><span class="placeholder-icon">💻</span></div>
+                        <span>军用计算机</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-hint">─ 向下滚动 ─</div>
         </div>
     </section>
 
-    <!-- Products -->
-    <section class="section products" id="products">
-        <div class="section-title fade-in">
-            <h2>八大产品<span class="gold">线</span></h2>
-            <p>全品类电容 · 覆盖所有军工应用场景</p>
-            <div class="line"></div>
-        </div>
-        <div class="products-grid">
-            <div class="product-card fade-in">
-                <span class="icon">⚡</span>
-                <h3>液态铝电解电容器</h3>
-                <button class="btn-download" onclick="alert('手册下载中…')">
-                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
-                    下载手册
-                </button>
+    <!-- ===== 第二屏：招商合作 + 联系我们（合并一屏） ===== -->
+    <section class="section-second" id="second">
+        <div class="second-inner">
+            <div class="second-header fade-in">
+                <h2>招商合作 · 联系我们</h2>
+                <div class="line"></div>
             </div>
-            <div class="product-card fade-in">
-                <span class="icon">🔋</span>
-                <h3>双电层超级电容</h3>
-                <button class="btn-download" onclick="alert('手册下载中…')">
-                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
-                    下载手册
-                </button>
-            </div>
-            <div class="product-card fade-in">
-                <span class="icon">🧪</span>
-                <h3>高分子固态铝电解电容器</h3>
-                <button class="btn-download" onclick="alert('手册下载中…')">
-                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
-                    下载手册
-                </button>
-            </div>
-            <div class="product-card fade-in">
-                <span class="icon">🔬</span>
-                <h3>混合型超级电容</h3>
-                <button class="btn-download" onclick="alert('手册下载中…')">
-                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
-                    下载手册
-                </button>
-            </div>
-            <div class="product-card fade-in">
-                <span class="icon">⚙️</span>
-                <h3>高分子混合动力铝电解电容器</h3>
-                <button class="btn-download" onclick="alert('手册下载中…')">
-                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
-                    下载手册
-                </button>
-            </div>
-            <div class="product-card fade-in">
-                <span class="icon">📐</span>
-                <h3>叠层高分子固态铝电解电容器</h3>
-                <button class="btn-download" onclick="alert('手册下载中…')">
-                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
-                    下载手册
-                </button>
-            </div>
-            <div class="product-card fade-in">
-                <span class="icon">💡</span>
-                <h3>薄膜电容器</h3>
-                <button class="btn-download" onclick="alert('手册下载中…')">
-                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
-                    下载手册
-                </button>
-            </div>
-            <div class="product-card fade-in">
-                <span class="icon">🔶</span>
-                <h3>导电高分子钽电解电容器</h3>
-                <button class="btn-download" onclick="alert('手册下载中…')">
-                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
-                    下载手册
-                </button>
+
+            <div class="second-body">
+                <!-- 左：招募 -->
+                <div class="recruit-card fade-in">
+                    <div class="icon-big">🤝</div>
+                    <h3>招募合作伙伴</h3>
+                    <div class="tagline">有实力 · 有要求的<br>军工元器件代理商</div>
+                    <p>诚邀在军工元器件领域具有丰富经验与渠道的代理商加入，共同开拓国产化替代市场，携手为国防事业贡献力量。</p>
+                    <a href="#contact" class="btn-contact">立即联系 →</a>
+                </div>
+
+                <!-- 右：联系我们 -->
+                <div class="contact-card-light fade-in">
+                    <div class="contact-title">📞 军工市场部</div>
+
+                    <div class="contact-person">
+                        <div class="avatar">👤</div>
+                        <div class="info">
+                            <div class="name">黎永生</div>
+                            <div class="contact-link">
+                                电话：<a href="tel:13761502339">13761502339</a> &nbsp;|&nbsp;
+                                邮箱：<a href="mailto:lys@ymin.com">lys@ymin.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-person">
+                        <div class="avatar">👤</div>
+                        <div class="info">
+                            <div class="name">王叶</div>
+                            <div class="contact-link">
+                                电话：<a href="tel:15601736889">15601736889</a> &nbsp;|&nbsp;
+                                邮箱：<a href="mailto:wy@ymin.com">wy@ymin.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-addr">
+                        📍 上海市奉贤区南桥镇杨王经济园区光村路258号
+                    </div>
+                    <div style="text-align:center; margin-top:10px; padding-top:12px; border-top:1px solid rgba(0,0,0,0.05);">
+                        <span style="font-size:13px; color:#888;">🌐 <a href="http://www.ymin.com" target="_blank" style="color:#b8962e; font-weight:500;">www.ymin.com</a></span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Military Fields -->
-    <section class="section military" id="military">
-        <div class="section-title fade-in">
-            <h2>军工<span class="gold">领域</span></h2>
-            <p>广泛应用于各军工核心领域</p>
-            <div class="line"></div>
-        </div>
-        <div class="fields-row fade-in">
-            <div class="field-item">
-                <div class="icon">🛩️</div>
-                <span>航空电子</span>
+    <!-- ===== 悬浮联系方式 (右下角) ===== -->
+    <div class="float-contact">
+        <div class="contact-panel">
+            <div class="panel-title">📞 军工市场部</div>
+            <div class="panel-item">
+                <div class="icon">👤</div>
+                <div>
+                    <div class="name">黎永生</div>
+                    <div><a href="tel:13761502339">13761502339</a> &nbsp;|&nbsp; <a href="mailto:lys@ymin.com">lys@ymin.com</a></div>
+                </div>
             </div>
-            <div class="field-item">
-                <div class="icon">🚀</div>
-                <span>导弹系统</span>
+            <div class="panel-item">
+                <div class="icon">👤</div>
+                <div>
+                    <div class="name">王叶</div>
+                    <div><a href="tel:15601736889">15601736889</a> &nbsp;|&nbsp; <a href="mailto:wy@ymin.com">wy@ymin.com</a></div>
+                </div>
             </div>
-            <div class="field-item">
-                <div class="icon">🛰️</div>
-                <span>卫星通信</span>
+            <div class="panel-item" style="border-top:1px solid #f0f0f0; padding-top:8px; margin-top:4px;">
+                <div class="icon">📍</div>
+                <div style="font-size:11px; color:#888;">上海市奉贤区杨王经济园区光村路258号</div>
             </div>
-            <div class="field-item">
-                <div class="icon">⚓</div>
-                <span>舰船电子</span>
-            </div>
-            <div class="field-item">
-                <div class="icon">📡</div>
-                <span>雷达系统</span>
-            </div>
-            <div class="field-item">
-                <div class="icon">🔫</div>
-                <span>武器装备</span>
-            </div>
-            <div class="field-item">
-                <div class="icon">🛡️</div>
-                <span>电子对抗</span>
-            </div>
-            <div class="field-item">
-                <div class="icon">💻</div>
-                <span>军用计算机</span>
+            <div style="text-align:center; margin-top:6px; padding-top:8px; border-top:1px solid #f0f0f0;">
+                <span style="font-size:12px; color:#888;">🌐 <a href="http://www.ymin.com" target="_blank" style="color:#b8962e; font-weight:500;">www.ymin.com</a></span>
             </div>
         </div>
-    </section>
-
-    <!-- Recruitment -->
-    <section class="section recruitment">
-        <div class="section-title fade-in">
-            <h2>招商<span class="gold">合作</span></h2>
-            <div class="line"></div>
-        </div>
-        <div class="recruit-box fade-in">
-            <h3>招募合作伙伴</h3>
-            <div class="tagline">✦ 有实力 · 有要求的军工元器件代理商 ✦</div>
-            <p>诚邀在军工元器件领域具有丰富经验与渠道的代理商加入，共同开拓国产化替代市场，携手为国防事业贡献力量。</p>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section contact" id="contact">
-        <div class="section-title fade-in">
-            <h2>联系<span class="gold">我们</span></h2>
-            <p>军工市场部 · 期待与您沟通</p>
-            <div class="line"></div>
-        </div>
-        <div class="contact-grid fade-in">
-            <div class="contact-card">
-                <h4>📞 黎永生</h4>
-                <div class="item"><span class="label">📱</span><a href="tel:13761502339">13761502339</a></div>
-                <div class="item"><span class="label">✉️</span><a href="mailto:lys@ymin.com">lys@ymin.com</a></div>
-            </div>
-            <div class="contact-card">
-                <h4>📞 王叶</h4>
-                <div class="item"><span class="label">📱</span><a href="tel:15601736889">15601736889</a></div>
-                <div class="item"><span class="label">✉️</span><a href="mailto:wy@ymin.com">wy@ymin.com</a></div>
-            </div>
-            <div class="contact-address">
-                🌐 <a href="https://ymin.com" target="_blank">ymin.com</a> &nbsp;·&nbsp; 📍 上海市奉贤区南桥镇杨王经济园区光村路258号
-            </div>
-        </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">© 2025 永铭电子 &nbsp;|&nbsp; All Rights Reserved</footer>
 
     <script>
-        // ===== Fade-in =====
         (function() {
             const obs = new IntersectionObserver(e => {
                 e.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
