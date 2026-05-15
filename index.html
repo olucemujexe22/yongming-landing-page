@@ -44,11 +44,7 @@
             flex-shrink: 0;
             overflow: hidden;
         }
-        .logo-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
+        .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
         .logo-text {
             font-size: 20px; font-weight: 700; letter-spacing: 2px;
             color: #1a1a2e;
@@ -98,9 +94,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 28px;
+            gap: 24px;
         }
-        .hero-headline { text-align: center; }
+        .hero-headline { text-align: center; margin-bottom: 10px; }
         .hero-headline .big {
             font-size: clamp(32px, 4.8vw, 58px);
             font-weight: 800;
@@ -114,10 +110,10 @@
             -webkit-text-fill-color: transparent;
         }
         .hero-section-label {
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 700;
             color: #b8962e;
-            letter-spacing: 6px;
+            letter-spacing: 5px;
             text-align: center;
             margin-bottom: 6px;
         }
@@ -127,13 +123,13 @@
         .hero-products-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 14px;
+            gap: 12px;
         }
         .hero-product-card {
             background: rgba(255,255,255,0.88);
             border: 1px solid #e4e6ee;
             border-radius: 12px;
-            padding: 16px 10px 12px;
+            padding: 14px 8px 10px;
             text-align: center;
             transition: all 0.3s ease;
             box-shadow: 0 2px 6px rgba(0,0,0,0.03);
@@ -143,53 +139,109 @@
             border-color: #d4af37;
             box-shadow: 0 10px 28px rgba(0,0,0,0.06);
         }
-        .hero-product-card .icon { font-size: 26px; display: block; margin-bottom: 6px; }
+        .hero-product-card .icon { font-size: 22px; display: block; margin-bottom: 4px; }
         .hero-product-card h4 {
-            font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
-            color: #1a1a2e; margin-bottom: 10px; line-height: 1.35;
+            font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
+            color: #1a1a2e; margin-bottom: 8px; line-height: 1.3;
         }
         .hero-product-card .btn-download-mini {
-            display: inline-flex; align-items: center; gap: 4px;
-            padding: 5px 16px; border: 1px solid #d4af37; border-radius: 100px;
-            color: #b8962e; font-size: 11px; transition: all 0.25s;
+            display: inline-flex; align-items: center; gap: 3px;
+            padding: 4px 14px; border: 1px solid #d4af37; border-radius: 100px;
+            color: #b8962e; font-size: 10px; transition: all 0.25s;
             font-weight: 500; background: transparent; cursor: pointer;
         }
         .hero-product-card .btn-download-mini:hover { background: rgba(212,175,55,0.1); }
-        .hero-product-card .btn-download-mini svg { width: 12px; height: 12px; fill: currentColor; }
+        .hero-product-card .btn-download-mini svg { width: 10px; height: 10px; fill: currentColor; }
 
-        /* 应用领域 */
-        .hero-fields-wrap { width: 100%; }
-        .hero-fields-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 14px;
-            margin-top: 4px;
+        /* ===== 应用领域 - 轮播 ===== */
+        .fields-carousel-wrap {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
         }
-        .hero-field-card {
+        .fields-carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .fields-carousel-slide {
+            min-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 8px 10px;
+        }
+        .fields-carousel-slide .field-item {
+            text-align: center;
+            flex: 0 0 auto;
+            width: 110px;
+        }
+        .fields-carousel-slide .field-item .field-icon {
+            width: 56px; height: 56px;
+            margin: 0 auto 6px;
             background: rgba(255,255,255,0.88);
             border: 1px solid #e4e6ee;
-            border-radius: 12px;
-            padding: 14px 8px 12px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px;
+            transition: background 0.3s, border-color 0.3s, transform 0.3s;
         }
-        .hero-field-card:hover {
-            transform: translateY(-3px);
+        .fields-carousel-slide .field-item:hover .field-icon {
             border-color: #d4af37;
-            box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+            transform: scale(1.08);
         }
-        .hero-field-card .field-img {
-            width: 100%; height: 70px; border-radius: 8px; margin-bottom: 8px;
-            background: #e8eaf0; display: flex; align-items: center;
-            justify-content: center; font-size: 28px; color: #b8962e; overflow: hidden;
+        .fields-carousel-slide .field-item span {
+            display: block;
+            font-size: 13px;
+            color: #555;
+            letter-spacing: 0.5px;
+            font-weight: 500;
         }
-        .hero-field-card .field-img img { width: 100%; height: 100%; object-fit: cover; }
-        .hero-field-card .field-img .placeholder-icon { font-size: 28px; opacity: 0.6; }
-        .hero-field-card span { display: block; font-size: 13px; color: #555; letter-spacing: 0.5px; font-weight: 500; }
-        .scroll-hint { font-size: 10px; color: #ccc; letter-spacing: 2px; text-align: center; padding: 2px 0; }
+        .fields-carousel-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin-top: 10px;
+        }
+        .fields-carousel-btn {
+            width: 32px; height: 32px;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 50%;
+            background: rgba(255,255,255,0.8);
+            color: #888;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s, border-color 0.3s, color 0.3s;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .fields-carousel-btn:hover {
+            background: rgba(212,175,55,0.1);
+            border-color: #d4af37;
+            color: #b8962e;
+        }
+        .fields-carousel-dots {
+            display: flex;
+            gap: 6px;
+        }
+        .fields-carousel-dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.15);
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            border: none;
+        }
+        .fields-carousel-dot.active {
+            background: #b8962e;
+            transform: scale(1.3);
+        }
 
-        /* ===== 第二屏：招商 + 联系我们（合并一屏） ===== */
+        .scroll-hint { font-size: 10px; color: #ccc; letter-spacing: 2px; text-align: center; padding: 4px 0 0; }
+
+        /* ===== 第二屏：招募合作伙伴（全屏） ===== */
         .section-second {
             position: relative; z-index: 1;
             min-height: 100vh;
@@ -197,180 +249,125 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 60px 56px;
-            background: linear-gradient(180deg, #dce0ec 0%, #c8cddd 30%, #b0b6ca 60%, #9ca2b8 100%);
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #0f1528 0%, #1a1f35 50%, #0f1528 100%);
         }
         .second-inner {
             width: 100%;
-            max-width: 1100px;
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        /* 第二屏顶部标题 */
-        .second-header {
+            max-width: 800px;
             text-align: center;
         }
-        .second-header h2 {
-            font-size: clamp(24px, 3vw, 36px);
-            font-weight: 700;
-            letter-spacing: 4px;
-            color: #1a1a2e;
-        }
-        .second-header h2 .gold { color: #b8962e; }
-        .second-header .line {
-            width: 50px; height: 3px;
-            background: linear-gradient(90deg, #b8962e, #d4af37);
-            margin: 12px auto 0;
-            border-radius: 2px;
-        }
-
-        /* 招商 + 联系左右布局 */
-        .second-body {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: stretch;
-        }
-
-        /* 招募卡片 — 浅色风格 */
-        .recruit-card {
-            background: rgba(255,255,255,0.85);
-            border: 1px solid rgba(212,175,55,0.2);
-            border-radius: 20px;
-            padding: 40px 32px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            transition: border-color 0.3s, box-shadow 0.3s;
-            backdrop-filter: blur(8px);
-        }
-        .recruit-card:hover {
-            border-color: rgba(212,175,55,0.5);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-        }
-        .recruit-card .icon-big {
-            font-size: 40px;
-            margin-bottom: 16px;
-        }
-        .recruit-card h3 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #1a1a2e;
-            letter-spacing: 3px;
-            margin-bottom: 8px;
-        }
-        .recruit-card .tagline {
-            color: #b8962e;
-            font-size: 13px;
-            letter-spacing: 4px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        .recruit-card p {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.9;
-            max-width: 380px;
-            margin: 0 auto;
-        }
-        .recruit-card .btn-contact {
+        .second-inner .recruit-badge {
             display: inline-block;
-            margin-top: 24px;
-            padding: 10px 32px;
-            border: 1px solid #b8962e;
+            padding: 6px 28px;
+            border: 1px solid rgba(212,175,55,0.25);
             border-radius: 100px;
-            color: #b8962e;
-            font-size: 13px;
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: #d4af37;
+            margin-bottom: 28px;
+            background: rgba(212,175,55,0.05);
+        }
+        .second-inner h2 {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+        }
+        .second-inner h2 .gold {
+            background: linear-gradient(90deg, #d4af37, #f5d97a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .second-inner .recruit-tagline {
+            font-size: 18px;
+            color: rgba(255,255,255,0.7);
             letter-spacing: 2px;
-            transition: all 0.3s;
-            font-weight: 500;
+            margin-bottom: 8px;
+            font-weight: 300;
         }
-        .recruit-card .btn-contact:hover {
-            background: rgba(212,175,55,0.12);
-        }
-
-        /* 联系卡片 — 浅色风格 */
-        .contact-card-light {
-            background: rgba(255,255,255,0.85);
-            border: 1px solid rgba(0,0,0,0.06);
-            border-radius: 20px;
-            padding: 40px 32px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            transition: border-color 0.3s, box-shadow 0.3s;
-            backdrop-filter: blur(8px);
-        }
-        .contact-card-light:hover {
-            border-color: rgba(212,175,55,0.4);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-        }
-        .contact-card-light .contact-title {
-            font-size: 20px;
+        .second-inner .recruit-tagline strong {
+            color: #d4af37;
             font-weight: 700;
-            color: #b8962e;
-            letter-spacing: 3px;
-            margin-bottom: 24px;
+        }
+        .second-inner .recruit-desc {
+            font-size: 15px;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto 36px;
+        }
+        .second-inner .recruit-contact-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+        }
+        .second-inner .recruit-contact-row .person {
             text-align: center;
         }
-        .contact-card-light .contact-person {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            padding: 14px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-        .contact-card-light .contact-person:last-of-type {
-            border-bottom: none;
-        }
-        .contact-card-light .contact-person .avatar {
-            width: 40px; height: 40px;
-            border-radius: 50%;
-            background: rgba(212,175,55,0.1);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 18px; flex-shrink: 0;
-        }
-        .contact-card-light .contact-person .info .name {
-            color: #1a1a2e;
+        .second-inner .recruit-contact-row .person .name {
+            color: #fff;
             font-weight: 600;
-            font-size: 15px;
+            font-size: 16px;
             letter-spacing: 1px;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
-        .contact-card-light .contact-person .info .contact-link {
-            color: #888;
-            font-size: 13px;
+        .second-inner .recruit-contact-row .person .contact-info {
+            color: rgba(255,255,255,0.4);
+            font-size: 14px;
+            line-height: 1.7;
         }
-        .contact-card-light .contact-person .info .contact-link a {
-            color: #b8962e;
+        .second-inner .recruit-contact-row .person .contact-info a {
+            color: #d4af37;
             font-weight: 500;
             transition: opacity 0.3s;
         }
-        .contact-card-light .contact-person .info .contact-link a:hover { opacity: 0.7; }
-        .contact-card-light .contact-addr {
-            text-align: center;
-            margin-top: 16px;
-            padding-top: 16px;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            color: #888;
-            font-size: 13px;
-            letter-spacing: 1px;
+        .second-inner .recruit-contact-row .person .contact-info a:hover { opacity: 0.7; }
+        .second-inner .recruit-divider {
+            width: 60px; height: 2px;
+            background: linear-gradient(90deg, #d4af37, transparent);
+            margin: 0 auto 28px;
         }
 
         /* ===== Footer ===== */
         .footer {
             position: relative; z-index: 1;
             text-align: center;
-            padding: 18px 40px;
+            padding: 32px 40px 24px;
             border-top: 1px solid rgba(0,0,0,0.04);
-            font-size: 12px;
-            color: #aaa;
-            letter-spacing: 1.5px;
             background: #f5f6fa;
+        }
+        .footer .footer-company {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a2e;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .footer .footer-addr {
+            font-size: 13px;
+            color: #888;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .footer .footer-web {
+            font-size: 13px;
+            color: #888;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .footer .footer-web a {
+            color: #b8962e;
+            font-weight: 500;
+        }
+        .footer .footer-copy {
+            font-size: 11px;
+            color: #bbb;
+            letter-spacing: 1.5px;
+            margin-top: 4px;
         }
 
         /* ===== 悬浮联系方式 (右下角) ===== */
@@ -409,9 +406,7 @@
             color: #b8962e; font-weight: 500; transition: opacity 0.3s;
         }
         .float-contact .contact-panel .panel-item a:hover { opacity: 0.7; }
-        .float-contact .contact-panel .panel-item .name {
-            color: #888; font-size: 11px;
-        }
+        .float-contact .contact-panel .panel-item .name { color: #888; font-size: 11px; }
 
         /* ===== Animations ===== */
         .fade-in {
@@ -423,23 +418,24 @@
         /* ===== Responsive ===== */
         @media (max-width: 1024px) {
             .hero-products-grid { grid-template-columns: repeat(2, 1fr); }
-            .hero-fields-grid { grid-template-columns: repeat(2, 1fr); }
-            .second-body { grid-template-columns: 1fr; gap: 24px; }
+            .second-inner .recruit-contact-row { gap: 24px; }
         }
         @media (max-width: 768px) {
             .header { padding: 10px 16px; }
             .nav-links { display: none; }
             .logo-slogan { display: none; }
             .hero { padding: 56px 16px 20px; }
-            .hero-inner { gap: 20px; }
-            .hero-products-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .hero-product-card { padding: 12px 8px; }
-            .hero-fields-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .hero-field-card .field-img { height: 56px; }
+            .hero-inner { gap: 18px; }
+            .hero-products-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .hero-product-card { padding: 10px 6px 8px; }
+            .hero-product-card h4 { font-size: 11px; }
+            .fields-carousel-slide { gap: 12px; }
+            .fields-carousel-slide .field-item { width: 80px; }
+            .fields-carousel-slide .field-item .field-icon { width: 46px; height: 46px; font-size: 20px; }
+            .fields-carousel-slide .field-item span { font-size: 12px; }
             .section-second { padding: 40px 20px; }
-            .second-body { gap: 20px; }
-            .recruit-card { padding: 28px 20px; }
-            .contact-card-light { padding: 28px 20px; }
+            .second-inner h2 { font-size: clamp(26px, 6vw, 36px); }
+            .second-inner .recruit-contact-row { flex-direction: column; gap: 16px; }
         }
         @media (max-width: 480px) {
             .hero-headline .big { font-size: clamp(26px, 7vw, 32px); }
@@ -477,105 +473,109 @@
                         <span class="icon">⚡</span>
                         <h4>液态铝电解电容器</h4>
                         <button class="btn-download-mini" onclick="alert('手册下载中…')">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
-                            手册
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册
                         </button>
                     </div>
                     <div class="hero-product-card">
                         <span class="icon">🔋</span>
                         <h4>双电层超级电容</h4>
                         <button class="btn-download-mini" onclick="alert('手册下载中…')">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
-                            手册
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册
                         </button>
                     </div>
                     <div class="hero-product-card">
                         <span class="icon">🧪</span>
                         <h4>高分子固态铝电解电容器</h4>
                         <button class="btn-download-mini" onclick="alert('手册下载中…')">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
-                            手册
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册
                         </button>
                     </div>
                     <div class="hero-product-card">
                         <span class="icon">🔬</span>
                         <h4>混合型超级电容</h4>
                         <button class="btn-download-mini" onclick="alert('手册下载中…')">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
-                            手册
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册
                         </button>
                     </div>
                     <div class="hero-product-card">
                         <span class="icon">⚙️</span>
                         <h4>高分子混合动力铝电解电容器</h4>
                         <button class="btn-download-mini" onclick="alert('手册下载中…')">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
-                            手册
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册
                         </button>
                     </div>
                     <div class="hero-product-card">
                         <span class="icon">📐</span>
                         <h4>叠层高分子固态铝电解电容器</h4>
                         <button class="btn-download-mini" onclick="alert('手册下载中…')">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
-                            手册
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册
                         </button>
                     </div>
                     <div class="hero-product-card">
                         <span class="icon">💡</span>
                         <h4>薄膜电容器</h4>
                         <button class="btn-download-mini" onclick="alert('手册下载中…')">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
-                            手册
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册
                         </button>
                     </div>
                     <div class="hero-product-card">
                         <span class="icon">🔶</span>
                         <h4>导电高分子钽电解电容器</h4>
                         <button class="btn-download-mini" onclick="alert('手册下载中…')">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
-                            手册
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- 应用领域 -->
-            <div class="hero-fields-wrap">
+            <!-- 应用领域 - 轮播 -->
+            <div class="fields-carousel-wrap">
                 <div class="hero-section-label">✦ 应用领域 ✦</div>
-                <div class="hero-fields-grid">
-                    <div class="hero-field-card">
-                        <div class="field-img"><span class="placeholder-icon">🛩️</span></div>
-                        <span>航空电子</span>
+                <div class="fields-carousel-track" id="fieldsTrack">
+                    <div class="fields-carousel-slide">
+                        <div class="field-item">
+                            <div class="field-icon">🛩️</div>
+                            <span>航空电子</span>
+                        </div>
+                        <div class="field-item">
+                            <div class="field-icon">🚀</div>
+                            <span>导弹系统</span>
+                        </div>
+                        <div class="field-item">
+                            <div class="field-icon">🛰️</div>
+                            <span>卫星通信</span>
+                        </div>
+                        <div class="field-item">
+                            <div class="field-icon">⚓</div>
+                            <span>舰船电子</span>
+                        </div>
                     </div>
-                    <div class="hero-field-card">
-                        <div class="field-img"><span class="placeholder-icon">🚀</span></div>
-                        <span>导弹系统</span>
+                    <div class="fields-carousel-slide">
+                        <div class="field-item">
+                            <div class="field-icon">📡</div>
+                            <span>雷达系统</span>
+                        </div>
+                        <div class="field-item">
+                            <div class="field-icon">🔫</div>
+                            <span>武器装备</span>
+                        </div>
+                        <div class="field-item">
+                            <div class="field-icon">🛡️</div>
+                            <span>电子对抗</span>
+                        </div>
+                        <div class="field-item">
+                            <div class="field-icon">💻</div>
+                            <span>军用计算机</span>
+                        </div>
                     </div>
-                    <div class="hero-field-card">
-                        <div class="field-img"><span class="placeholder-icon">🛰️</span></div>
-                        <span>卫星通信</span>
+                </div>
+                <div class="fields-carousel-controls">
+                    <button class="fields-carousel-btn" id="fieldsPrevBtn">‹</button>
+                    <div class="fields-carousel-dots" id="fieldsDots">
+                        <span class="fields-carousel-dot active" data-index="0"></span>
+                        <span class="fields-carousel-dot" data-index="1"></span>
                     </div>
-                    <div class="hero-field-card">
-                        <div class="field-img"><span class="placeholder-icon">⚓</span></div>
-                        <span>舰船电子</span>
-                    </div>
-                    <div class="hero-field-card">
-                        <div class="field-img"><span class="placeholder-icon">📡</span></div>
-                        <span>雷达系统</span>
-                    </div>
-                    <div class="hero-field-card">
-                        <div class="field-img"><span class="placeholder-icon">🔫</span></div>
-                        <span>武器装备</span>
-                    </div>
-                    <div class="hero-field-card">
-                        <div class="field-img"><span class="placeholder-icon">🛡️</span></div>
-                        <span>电子对抗</span>
-                    </div>
-                    <div class="hero-field-card">
-                        <div class="field-img"><span class="placeholder-icon">💻</span></div>
-                        <span>军用计算机</span>
-                    </div>
+                    <button class="fields-carousel-btn" id="fieldsNextBtn">›</button>
                 </div>
             </div>
 
@@ -583,55 +583,31 @@
         </div>
     </section>
 
-    <!-- ===== 第二屏：招商合作 + 联系我们（合并一屏） ===== -->
+    <!-- ===== 第二屏：招募合作伙伴（全屏设计） ===== -->
     <section class="section-second" id="second">
-        <div class="second-inner">
-            <div class="second-header fade-in">
-                <h2>招商合作 · 联系我们</h2>
-                <div class="line"></div>
-            </div>
+        <div class="second-inner fade-in">
+            <div class="recruit-badge">✦ 诚邀加入 ✦</div>
+            <h2>招募<span class="gold">合作伙伴</span></h2>
+            <div class="recruit-tagline">寻找有实力 · 有要求的 <strong>军工元器件代理商</strong></div>
+            <div class="recruit-divider"></div>
+            <p class="recruit-desc">
+                诚邀在军工元器件领域具有丰富经验与渠道的代理商加入我们，<br>
+                共同开拓国产化替代市场，携手为国防事业贡献力量。
+            </p>
 
-            <div class="second-body">
-                <!-- 左：招募 -->
-                <div class="recruit-card fade-in">
-                    <div class="icon-big">🤝</div>
-                    <h3>招募合作伙伴</h3>
-                    <div class="tagline">有实力 · 有要求的<br>军工元器件代理商</div>
-                    <p>诚邀在军工元器件领域具有丰富经验与渠道的代理商加入，共同开拓国产化替代市场，携手为国防事业贡献力量。</p>
-                    <a href="#contact" class="btn-contact">立即联系 →</a>
+            <div class="recruit-contact-row">
+                <div class="person">
+                    <div class="name">👤 黎永生</div>
+                    <div class="contact-info">
+                        电话：<a href="tel:13761502339">13761502339</a><br>
+                        邮箱：<a href="mailto:lys@ymin.com">lys@ymin.com</a>
+                    </div>
                 </div>
-
-                <!-- 右：联系我们 -->
-                <div class="contact-card-light fade-in">
-                    <div class="contact-title">📞 军工市场部</div>
-
-                    <div class="contact-person">
-                        <div class="avatar">👤</div>
-                        <div class="info">
-                            <div class="name">黎永生</div>
-                            <div class="contact-link">
-                                电话：<a href="tel:13761502339">13761502339</a> &nbsp;|&nbsp;
-                                邮箱：<a href="mailto:lys@ymin.com">lys@ymin.com</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact-person">
-                        <div class="avatar">👤</div>
-                        <div class="info">
-                            <div class="name">王叶</div>
-                            <div class="contact-link">
-                                电话：<a href="tel:15601736889">15601736889</a> &nbsp;|&nbsp;
-                                邮箱：<a href="mailto:wy@ymin.com">wy@ymin.com</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact-addr">
-                        📍 上海市奉贤区南桥镇杨王经济园区光村路258号
-                    </div>
-                    <div style="text-align:center; margin-top:10px; padding-top:12px; border-top:1px solid rgba(0,0,0,0.05);">
-                        <span style="font-size:13px; color:#888;">🌐 <a href="http://www.ymin.com" target="_blank" style="color:#b8962e; font-weight:500;">www.ymin.com</a></span>
+                <div class="person">
+                    <div class="name">👤 王叶</div>
+                    <div class="contact-info">
+                        电话：<a href="tel:15601736889">15601736889</a><br>
+                        邮箱：<a href="mailto:wy@ymin.com">wy@ymin.com</a>
                     </div>
                 </div>
             </div>
@@ -666,15 +642,55 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">© 2025 永铭电子 &nbsp;|&nbsp; All Rights Reserved</footer>
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="footer-company">上海永铭电子股份有限公司</div>
+        <div class="footer-addr">📍 上海市奉贤区南桥镇杨王经济园区光村路258号</div>
+        <div class="footer-web">🌐 <a href="http://www.ymin.com" target="_blank">www.ymin.com</a></div>
+        <div class="footer-copy">© 2025 永铭电子 &nbsp;|&nbsp; All Rights Reserved</div>
+    </footer>
 
     <script>
+        // ===== 轮播逻辑 =====
         (function() {
-            const obs = new IntersectionObserver(e => {
-                e.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+            const track = document.getElementById('fieldsTrack');
+            const dots = document.querySelectorAll('.fields-carousel-dot');
+            const prevBtn = document.getElementById('fieldsPrevBtn');
+            const nextBtn = document.getElementById('fieldsNextBtn');
+            let idx = 0;
+            const total = document.querySelectorAll('.fields-carousel-slide').length;
+
+            function goTo(i) {
+                if (i < 0) i = total - 1;
+                if (i >= total) i = 0;
+                idx = i;
+                track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+                dots.forEach((d, j) => d.classList.toggle('active', j === idx));
+            }
+
+            prevBtn.addEventListener('click', function() { goTo(idx - 1); });
+            nextBtn.addEventListener('click', function() { goTo(idx + 1); });
+            dots.forEach(function(d) {
+                d.addEventListener('click', function() { goTo(parseInt(d.dataset.index)); });
+            });
+
+            // 自动播放
+            var autoPlay = setInterval(function() { goTo(idx + 1); }, 4000);
+            var wrap = document.querySelector('.fields-carousel-wrap');
+            wrap.addEventListener('mouseenter', function() { clearInterval(autoPlay); });
+            wrap.addEventListener('mouseleave', function() {
+                autoPlay = setInterval(function() { goTo(idx + 1); }, 4000);
+            });
+        })();
+
+        // ===== Fade-in =====
+        (function() {
+            const obs = new IntersectionObserver(function(e) {
+                e.forEach(function(entry) {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
             }, { threshold: 0.15 });
-            document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+            document.querySelectorAll('.fade-in').forEach(function(el) { obs.observe(el); });
         })();
     </script>
 </body>
