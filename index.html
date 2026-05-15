@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>永铭电子 - 军工电容国产化替代解决方案</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+            color: #1a1a2e;
+            background: #f5f6fa;
+            line-height: 1.5;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* ===== Header ===== */
+        .header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            z-index: 1000;
+            padding: 16px 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .logo-icon {
+            width: 44px; height: 44px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .logo-icon img {
+            width: 100%; height: 100%;
+            object-fit: contain;
+        }
+        .logo-text {
+            font-size: 20px; font-weight: 700; letter-spacing: 2px;
+            color: #1a1a2e;
+        }
+        .logo-slogan {
+            font-size: 14px;
+            color: #b8962e;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            padding-left: 16px;
+            border-left: 2px solid #d4af37;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: 14px;
+            color: #666;
+            transition: color 0.3s;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #b8962e;
+            border-bottom-color: #d4af37;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            position: relative; z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 40px 60px;
+            background: linear-gradient(150deg, #f5f6fa 0%, #eef0f5 40%, #e6e8f0 100%);
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 6px 24px;
+            border: 1.5px solid #d4af37;
+            border-radius: 100px;
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: #b8962e;
+            margin-bottom: 32px;
+            background: rgba(212, 175, 55, 0.06);
+            font-weight: 600;
+        }
+        .hero h1 {
+            font-size: clamp(42px, 6.5vw, 78px);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+            color: #1a1a2e;
+        }
+        .hero h1 .gold {
+            background: linear-gradient(90deg, #b8962e, #d4af37, #b8962e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-sub {
+            font-size: clamp(16px, 1.6vw, 22px);
+            font-weight: 400;
+            color: #666;
+            max-width: 680px;
+            margin: 0 auto 40px;
+            letter-spacing: 4px;
+            line-height: 1.7;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn-primary {
+            padding: 14px 42px;
+            background: linear-gradient(135deg, #b8962e, #d4af37);
+            color: #fff;
+            font-weight: 700; font-size: 15px;
+            border-radius: 100px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(212,175,55,0.3);
+        }
+        .btn-outline {
+            padding: 14px 42px;
+            border: 2px solid #d4af37;
+            color: #b8962e;
+            font-weight: 600; font-size: 15px;
+            border-radius: 100px;
+            transition: background 0.3s;
+            letter-spacing: 2px;
+            background: transparent;
+            cursor: pointer;
+        }
+        .btn-outline:hover {
+            background: rgba(212,175,55,0.06);
+        }
+
+        /* ===== Sections ===== */
+        .section {
+            position: relative; z-index: 1;
+            padding: 80px 56px 90px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .section-title h2 {
+            font-size: clamp(24px, 3vw, 32px);
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: #1a1a2e;
+        }
+        .section-title h2 .gold { color: #b8962e; }
+        .section-title p {
+            color: #999;
+            font-size: 14px;
+            letter-spacing: 3px;
+            margin-top: 12px;
+            font-weight: 400;
+        }
+        .section-title .line {
+            width: 48px; height: 3px;
+            background: linear-gradient(90deg, #b8962e, #d4af37);
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
+
+        /* ===== Products ===== */
+        .products { background: #fff; }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .product-card {
+            background: #fff;
+            border: 1px solid #e8eaf0;
+            border-radius: 16px;
+            padding: 32px 24px 24px;
+            text-align: center;
+            transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+            border-color: #d4af37;
+        }
+        .product-card .icon {
+            font-size: 32px;
+            margin-bottom: 14px;
+            display: block;
+        }
+        .product-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+            color: #1a1a2e;
+        }
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 20px;
+            border: 1px solid #d4af37;
+            border-radius: 100px;
+            color: #b8962e;
+            font-size: 13px;
+            transition: all 0.25s;
+            font-weight: 500;
+            background: transparent;
+            cursor: pointer;
+        }
+        .btn-download:hover {
+            background: rgba(212,175,55,0.08);
+        }
+        .btn-download svg { width: 14px; height: 14px; fill: currentColor; }
+
+        /* ===== Military Fields ===== */
+        .military { background: #f5f6fa; }
+        .fields-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .field-item {
+            text-align: center;
+            width: 100px;
+        }
+        .field-item .icon {
+            width: 64px; height: 64px;
+            margin: 0 auto 12px;
+            background: #fff;
+            border: 1px solid #e0e3ec;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .field-item:hover .icon {
+            border-color: #d4af37;
+            box-shadow: 0 8px 24px rgba(212,175,55,0.12);
+            transform: scale(1.1);
+        }
+        .field-item span {
+            font-size: 14px;
+            color: #666;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* ===== Recruitment ===== */
+        .recruitment { background: #fff; }
+        .recruit-box {
+            max-width: 720px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #fafbfe 0%, #f0f2f8 100%);
+            border: 1px solid #e8eaf0;
+            border-radius: 20px;
+            padding: 48px 40px;
+            text-align: center;
+        }
+        .recruit-box h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 3px;
+            color: #1a1a2e;
+        }
+        .recruit-box .tagline {
+            color: #b8962e;
+            font-size: 15px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .recruit-box p {
+            color: #888;
+            font-size: 15px;
+            line-height: 1.8;
+            max-width: 460px;
+            margin: 0 auto;
+        }
+
+        /* ===== Contact ===== */
+        .contact { background: #f5f6fa; }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .contact-card {
+            background: #fff;
+            border: 1px solid #e8eaf0;
+            border-radius: 16px;
+            padding: 28px 30px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .contact-card:hover {
+            border-color: #d4af37;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+        }
+        .contact-card h4 {
+            font-size: 15px;
+            color: #b8962e;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+        .contact-card .item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 15px;
+        }
+        .contact-card .item:last-child { margin-bottom: 0; }
+        .contact-card .item .label {
+            color: #bbb;
+            font-size: 12px;
+            min-width: 32px;
+            font-weight: 400;
+        }
+        .contact-card .item a {
+            color: #b8962e;
+            transition: opacity 0.3s;
+            font-weight: 500;
+        }
+        .contact-card .item a:hover { opacity: 0.7; }
+        .contact-address {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #e8eaf0;
+            border-radius: 12px;
+            color: #888;
+            font-size: 14px;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .contact-address a {
+            color: #b8962e;
+            font-weight: 600;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            position: relative; z-index: 1;
+            text-align: center;
+            padding: 24px 40px;
+            border-top: 1px solid #e8eaf0;
+            font-size: 12px;
+            color: #ccc;
+            letter-spacing: 1.5px;
+        }
+
+        /* ===== Animations ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .header { padding: 12px 20px; }
+            .nav-links { display: none; }
+            .logo-slogan { display: none; }
+            .hero { padding: 100px 20px 40px; min-height: 92vh; }
+            .section { padding: 50px 20px 60px; }
+            .products-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+            .contact-grid { grid-template-columns: 1fr; gap: 16px; }
+            .fields-row { gap: 24px; }
+            .field-item { width: 80px; }
+            .field-item .icon { width: 52px; height: 52px; font-size: 22px; }
+            .recruit-box { padding: 32px 24px; }
+        }
+        @media (max-width: 480px) {
+            .products-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: clamp(32px, 10vw, 48px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-area">
+            <div class="logo-icon"><img src="logo.png" alt="永铭电子"></div>
+            <span class="logo-text">永铭电子</span>
+            <span class="logo-slogan">电容应用，有困难找永铭</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#products">产品线</a></li>
+            <li><a href="#military">军工领域</a></li>
+            <li><a href="#contact">联系我们</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-badge">✦ 国产化替代解决方案专家</div>
+        <h1>
+            <span class="gold">军工及高可靠领域</span><br>
+            电容器国产化替代解决方案
+        </h1>
+        <p class="hero-sub">专注为军工领域提供全品类电容器 · 国产自主 · 可靠交付</p>
+        <div class="hero-actions">
+            <a href="#products" class="btn-primary">查看产品线</a>
+            <a href="#contact" class="btn-outline">联系军工市场部</a>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="section products" id="products">
+        <div class="section-title fade-in">
+            <h2>八大产品<span class="gold">线</span></h2>
+            <p>全品类电容 · 覆盖所有军工应用场景</p>
+            <div class="line"></div>
+        </div>
+        <div class="products-grid">
+            <div class="product-card fade-in">
+                <span class="icon">⚡</span>
+                <h3>液态铝电解电容器</h3>
+                <button class="btn-download" onclick="alert('手册下载中…')">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
+                    下载手册
+                </button>
+            </div>
+            <div class="product-card fade-in">
+                <span class="icon">🔋</span>
+                <h3>双电层超级电容</h3>
+                <button class="btn-download" onclick="alert('手册下载中…')">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
+                    下载手册
+                </button>
+            </div>
+            <div class="product-card fade-in">
+                <span class="icon">🧪</span>
+                <h3>高分子固态铝电解电容器</h3>
+                <button class="btn-download" onclick="alert('手册下载中…')">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
+                    下载手册
+                </button>
+            </div>
+            <div class="product-card fade-in">
+                <span class="icon">🔬</span>
+                <h3>混合型超级电容</h3>
+                <button class="btn-download" onclick="alert('手册下载中…')">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
+                    下载手册
+                </button>
+            </div>
+            <div class="product-card fade-in">
+                <span class="icon">⚙️</span>
+                <h3>高分子混合动力铝电解电容器</h3>
+                <button class="btn-download" onclick="alert('手册下载中…')">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
+                    下载手册
+                </button>
+            </div>
+            <div class="product-card fade-in">
+                <span class="icon">📐</span>
+                <h3>叠层高分子固态铝电解电容器</h3>
+                <button class="btn-download" onclick="alert('手册下载中…')">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
+                    下载手册
+                </button>
+            </div>
+            <div class="product-card fade-in">
+                <span class="icon">💡</span>
+                <h3>薄膜电容器</h3>
+                <button class="btn-download" onclick="alert('手册下载中…')">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
+                    下载手册
+                </button>
+            </div>
+            <div class="product-card fade-in">
+                <span class="icon">🔶</span>
+                <h3>导电高分子钽电解电容器</h3>
+                <button class="btn-download" onclick="alert('手册下载中…')">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg>
+                    下载手册
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Military Fields -->
+    <section class="section military" id="military">
+        <div class="section-title fade-in">
+            <h2>军工<span class="gold">领域</span></h2>
+            <p>广泛应用于各军工核心领域</p>
+            <div class="line"></div>
+        </div>
+        <div class="fields-row fade-in">
+            <div class="field-item">
+                <div class="icon">🛩️</div>
+                <span>航空电子</span>
+            </div>
+            <div class="field-item">
+                <div class="icon">🚀</div>
+                <span>导弹系统</span>
+            </div>
+            <div class="field-item">
+                <div class="icon">🛰️</div>
+                <span>卫星通信</span>
+            </div>
+            <div class="field-item">
+                <div class="icon">⚓</div>
+                <span>舰船电子</span>
+            </div>
+            <div class="field-item">
+                <div class="icon">📡</div>
+                <span>雷达系统</span>
+            </div>
+            <div class="field-item">
+                <div class="icon">🔫</div>
+                <span>武器装备</span>
+            </div>
+            <div class="field-item">
+                <div class="icon">🛡️</div>
+                <span>电子对抗</span>
+            </div>
+            <div class="field-item">
+                <div class="icon">💻</div>
+                <span>军用计算机</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recruitment -->
+    <section class="section recruitment">
+        <div class="section-title fade-in">
+            <h2>招商<span class="gold">合作</span></h2>
+            <div class="line"></div>
+        </div>
+        <div class="recruit-box fade-in">
+            <h3>招募合作伙伴</h3>
+            <div class="tagline">✦ 有实力 · 有要求的军工元器件代理商 ✦</div>
+            <p>诚邀在军工元器件领域具有丰富经验与渠道的代理商加入，共同开拓国产化替代市场，携手为国防事业贡献力量。</p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+        <div class="section-title fade-in">
+            <h2>联系<span class="gold">我们</span></h2>
+            <p>军工市场部 · 期待与您沟通</p>
+            <div class="line"></div>
+        </div>
+        <div class="contact-grid fade-in">
+            <div class="contact-card">
+                <h4>📞 黎永生</h4>
+                <div class="item"><span class="label">📱</span><a href="tel:13761502339">13761502339</a></div>
+                <div class="item"><span class="label">✉️</span><a href="mailto:lys@ymin.com">lys@ymin.com</a></div>
+            </div>
+            <div class="contact-card">
+                <h4>📞 王叶</h4>
+                <div class="item"><span class="label">📱</span><a href="tel:15601736889">15601736889</a></div>
+                <div class="item"><span class="label">✉️</span><a href="mailto:wy@ymin.com">wy@ymin.com</a></div>
+            </div>
+            <div class="contact-address">
+                🌐 <a href="https://ymin.com" target="_blank">ymin.com</a> &nbsp;·&nbsp; 📍 上海市奉贤区南桥镇杨王经济园区光村路258号
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">© 2025 永铭电子 &nbsp;|&nbsp; All Rights Reserved</footer>
+
+    <script>
+        // ===== Fade-in =====
+        (function() {
+            const obs = new IntersectionObserver(e => {
+                e.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+            }, { threshold: 0.15 });
+            document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+        })();
+    </script>
+</body>
+</html>
