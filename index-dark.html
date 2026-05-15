@@ -247,7 +247,7 @@
 
         .scroll-hint { font-size: 10px; color: rgba(255,255,255,0.15); letter-spacing: 2px; text-align: center; padding: 4px 0 0; }
 
-        /* ===== 第二屏：招募合作伙伴 ===== */
+        /* ===== 第二屏：招募合作伙伴（全屏放大） ===== */
         .section-second {
             position: relative; z-index: 1;
             min-height: 100vh;
@@ -260,26 +260,26 @@
         }
         .second-inner {
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
             text-align: center;
         }
         .second-inner .recruit-badge {
             display: inline-block;
-            padding: 6px 28px;
-            border: 1px solid rgba(212,175,55,0.25);
+            padding: 10px 36px;
+            border: 1px solid rgba(212,175,55,0.3);
             border-radius: 100px;
-            font-size: 12px;
-            letter-spacing: 4px;
+            font-size: 16px;
+            letter-spacing: 5px;
             color: #d4af37;
-            margin-bottom: 28px;
-            background: rgba(212,175,55,0.05);
+            margin-bottom: 32px;
+            background: rgba(212,175,55,0.06);
         }
         .second-inner h2 {
-            font-size: clamp(32px, 5vw, 52px);
+            font-size: clamp(48px, 6vw, 72px);
             font-weight: 800;
             color: #fff;
-            letter-spacing: 4px;
-            margin-bottom: 12px;
+            letter-spacing: 5px;
+            margin-bottom: 16px;
         }
         .second-inner h2 .gold {
             background: linear-gradient(90deg, #d4af37, #f5d97a);
@@ -287,55 +287,28 @@
             -webkit-text-fill-color: transparent;
         }
         .second-inner .recruit-tagline {
-            font-size: 18px;
-            color: rgba(255,255,255,0.7);
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-            font-weight: 300;
+            font-size: clamp(22px, 2.5vw, 30px);
+            color: rgba(255,255,255,0.75);
+            letter-spacing: 3px;
+            margin-bottom: 24px;
+            font-weight: 400;
         }
         .second-inner .recruit-tagline strong {
             color: #d4af37;
             font-weight: 700;
         }
         .second-inner .recruit-desc {
-            font-size: 15px;
-            color: rgba(255,255,255,0.4);
-            line-height: 1.8;
-            max-width: 600px;
-            margin: 0 auto 36px;
+            font-size: clamp(18px, 2vw, 22px);
+            color: rgba(255,255,255,0.45);
+            line-height: 2;
+            max-width: 720px;
+            margin: 0 auto;
         }
-        .second-inner .recruit-contact-row {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-bottom: 36px;
-        }
-        .second-inner .recruit-contact-row .person {
-            text-align: center;
-        }
-        .second-inner .recruit-contact-row .person .name {
-            color: #fff;
-            font-weight: 600;
-            font-size: 16px;
-            letter-spacing: 1px;
-            margin-bottom: 6px;
-        }
-        .second-inner .recruit-contact-row .person .contact-info {
-            color: rgba(255,255,255,0.4);
-            font-size: 14px;
-            line-height: 1.7;
-        }
-        .second-inner .recruit-contact-row .person .contact-info a {
-            color: #d4af37;
-            font-weight: 500;
-            transition: opacity 0.3s;
-        }
-        .second-inner .recruit-contact-row .person .contact-info a:hover { opacity: 0.7; }
         .second-inner .recruit-divider {
-            width: 60px; height: 2px;
+            width: 80px;
+            height: 3px;
             background: linear-gradient(90deg, #d4af37, transparent);
-            margin: 0 auto 28px;
+            margin: 24px auto 32px;
         }
 
         /* ===== Footer ===== */
@@ -603,22 +576,6 @@
                 共同开拓国产化替代市场，携手为国防事业贡献力量。
             </p>
 
-            <div class="recruit-contact-row">
-                <div class="person">
-                    <div class="name">👤 黎永生</div>
-                    <div class="contact-info">
-                        电话：<a href="tel:13761502339">13761502339</a><br>
-                        邮箱：<a href="mailto:lys@ymin.com">lys@ymin.com</a>
-                    </div>
-                </div>
-                <div class="person">
-                    <div class="name">👤 王叶</div>
-                    <div class="contact-info">
-                        电话：<a href="tel:15601736889">15601736889</a><br>
-                        邮箱：<a href="mailto:wy@ymin.com">wy@ymin.com</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
