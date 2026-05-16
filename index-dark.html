@@ -92,7 +92,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding: 80px 56px 20px;
+            padding: 60px 56px 10px;
             background: radial-gradient(ellipse at 50% 30%, rgba(10,30,60,0.6) 0%, transparent 70%);
         }
         .hero-inner {
@@ -102,13 +102,19 @@
             flex-direction: column;
             align-items: center;
             flex: 1;
-            padding-top: 20px;
+            padding-top: 0;
         }
-        .hero-headline { text-align: center; margin-bottom: 6px; }
+
+        /* 主标题 */
+        .hero-headline {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 6px;
+        }
         .hero-headline .big {
-            font-size: clamp(32px, 4.8vw, 58px);
+            font-size: clamp(44px, 6.4vw, 76px);
             font-weight: 800;
-            line-height: 1.2;
+            line-height: 1.5;
             letter-spacing: 2px;
         }
         .hero-headline .big .gold {
@@ -134,16 +140,16 @@
             padding-bottom: 8px;
         }
 
-        /* 八大产品线 - 下移更多 */
+        /* 八大产品线 - 进一步缩小与主标题间距，确保首屏不溢出 */
         .hero-products-wrap {
             width: 100%;
-            margin-top: 42px;
+            margin-top: 0;
         }
         .hero-products-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin-top: 16px;
+            gap: 8px;
+            margin-top: 6px;
         }
         .hero-product-card {
             background: rgba(255,255,255,0.04);
@@ -179,7 +185,7 @@
             margin: auto auto 0;
             position: relative;
             overflow: hidden;
-            padding-top: 48px;
+            padding-top: 20px;
         }
         .fields-carousel-track {
             display: flex;
@@ -463,7 +469,7 @@
             <div class="hero-headline">
                 <div class="big">
                     <span class="gold">专注于为军工及高可靠领域</span><br>
-                    提供各类电容器国产化替代解决方案
+                    <span style="white-space: nowrap;">提供各类电容器国产化替代解决方案</span>
                 </div>
             </div>
 
