@@ -116,24 +116,34 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        /* 统一标题样式 - 宽度自适应 */
+        .section-label-wrap {
+            width: 100%;
+            text-align: center;
+        }
         .hero-section-label {
-            font-size: 15px;
+            display: inline-block;
+            font-size: 20px;
             font-weight: 700;
             color: #d4af37;
-            letter-spacing: 5px;
+            letter-spacing: 8px;
             text-align: center;
-            margin-bottom: 6px;
+            padding: 0 20px;
+            border-bottom: 2px solid rgba(212,175,55,0.25);
+            padding-bottom: 8px;
         }
 
-        /* 八大产品线 - 下移 */
+        /* 八大产品线 - 下移更多 */
         .hero-products-wrap {
             width: 100%;
-            margin-top: 24px;
+            margin-top: 42px;
         }
         .hero-products-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 12px;
+            margin-top: 16px;
         }
         .hero-product-card {
             background: rgba(255,255,255,0.04);
@@ -169,7 +179,7 @@
             margin: auto auto 0;
             position: relative;
             overflow: hidden;
-            padding-top: 12px;
+            padding-top: 48px;
         }
         .fields-carousel-track {
             display: flex;
@@ -415,9 +425,11 @@
             .logo-slogan { display: none; }
             .hero { padding: 56px 16px 10px; }
             .hero-inner { padding-top: 10px; }
+            .hero-products-wrap { margin-top: 24px; }
             .hero-products-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
             .hero-product-card { padding: 10px 6px 8px; }
             .hero-product-card h4 { font-size: 11px; }
+            .hero-section-label { font-size: 16px; letter-spacing: 4px; }
             .fields-carousel-slide { gap: 12px; }
             .fields-carousel-slide .field-item { width: 90px; }
             .fields-carousel-slide .field-item .field-icon { width: 90px; height: 60px; font-size: 22px; }
@@ -455,9 +467,11 @@
                 </div>
             </div>
 
-            <!-- 八大产品线 -->
+            <!-- 八大产品线（下移） -->
             <div class="hero-products-wrap">
-                <div class="hero-section-label">✦ 八大产品线 ✦</div>
+                <div class="section-label-wrap">
+                    <div class="hero-section-label">✦ 八大产品线</div>
+                </div>
                 <div class="hero-products-grid">
                     <div class="hero-product-card">
                         <span class="icon">⚡</span>
@@ -520,7 +534,9 @@
 
             <!-- 应用领域 - 卡片轮播（贴底） -->
             <div class="fields-carousel-wrap">
-                <div class="hero-section-label">✦ 应用领域 ✦</div>
+                <div class="section-label-wrap">
+                    <div class="hero-section-label">✦ 应用领域</div>
+                </div>
                 <div class="fields-carousel-track" id="fieldsTrack">
                     <div class="fields-carousel-slide">
                         <div class="field-item">
