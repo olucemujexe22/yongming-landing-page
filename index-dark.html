@@ -158,7 +158,7 @@
         .hero-product-card .btn-download-mini:hover { background: rgba(212,175,55,0.12); }
         .hero-product-card .btn-download-mini svg { width: 10px; height: 10px; fill: currentColor; }
 
-        /* ===== 应用领域 - 轮播 ===== */
+        /* ===== 应用领域 - 卡片轮播 ===== */
         .fields-carousel-wrap {
             width: 100%;
             max-width: 900px;
@@ -181,22 +181,28 @@
         .fields-carousel-slide .field-item {
             text-align: center;
             flex: 0 0 auto;
-            width: 110px;
+            width: 120px;
         }
         .fields-carousel-slide .field-item .field-icon {
-            width: 56px; height: 56px;
-            margin: 0 auto 6px;
-            background: rgba(212,175,55,0.08);
-            border: 1px solid rgba(212,175,55,0.15);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 24px;
-            transition: background 0.3s, border-color 0.3s, transform 0.3s;
+            width: 120px; height: 80px;
+            margin: 0 auto 8px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+        .fields-carousel-slide .field-item .field-icon img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
         }
         .fields-carousel-slide .field-item:hover .field-icon {
-            background: rgba(212,175,55,0.16);
             border-color: #d4af37;
-            transform: scale(1.08);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212,175,55,0.15);
         }
         .fields-carousel-slide .field-item span {
             display: block;
@@ -397,7 +403,6 @@
         /* ===== Responsive ===== */
         @media (max-width: 1024px) {
             .hero-products-grid { grid-template-columns: repeat(2, 1fr); }
-            .second-inner .recruit-contact-row { gap: 24px; }
         }
         @media (max-width: 768px) {
             .header { padding: 10px 16px; }
@@ -409,12 +414,11 @@
             .hero-product-card { padding: 10px 6px 8px; }
             .hero-product-card h4 { font-size: 11px; }
             .fields-carousel-slide { gap: 12px; }
-            .fields-carousel-slide .field-item { width: 80px; }
-            .fields-carousel-slide .field-item .field-icon { width: 46px; height: 46px; font-size: 20px; }
+            .fields-carousel-slide .field-item { width: 90px; }
+            .fields-carousel-slide .field-item .field-icon { width: 90px; height: 60px; font-size: 22px; }
             .fields-carousel-slide .field-item span { font-size: 12px; }
             .section-second { padding: 40px 20px; }
             .second-inner h2 { font-size: clamp(26px, 6vw, 36px); }
-            .second-inner .recruit-contact-row { flex-direction: column; gap: 16px; }
         }
         @media (max-width: 480px) {
             .hero-headline .big { font-size: clamp(26px, 7vw, 32px); }
@@ -509,7 +513,7 @@
                 </div>
             </div>
 
-            <!-- 应用领域 - 轮播 -->
+            <!-- 应用领域 - 卡片轮播 -->
             <div class="fields-carousel-wrap">
                 <div class="hero-section-label">✦ 应用领域 ✦</div>
                 <div class="fields-carousel-track" id="fieldsTrack">
@@ -575,7 +579,6 @@
                 诚邀在军工元器件领域具有丰富经验与渠道的代理商加入我们，<br>
                 共同开拓国产化替代市场，携手为国防事业贡献力量。
             </p>
-
         </div>
     </section>
 
