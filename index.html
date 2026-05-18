@@ -29,21 +29,21 @@
         }
         .logo-area { display: flex; align-items: center; gap: 12px; }
         .logo-icon {
-            width: 36px; height: 36px; border-radius: 8px;
+            width: 52px; height: 52px; border-radius: 8px;
             display: flex; align-items: center; justify-content: center;
             flex-shrink: 0; overflow: hidden;
         }
         .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
         .logo-text { font-size: 20px; font-weight: 700; letter-spacing: 2px; color: #1a1a2e; }
         .logo-slogan {
-            font-size: 14px; color: #b8962e; font-weight: 600; letter-spacing: 2px;
+            font-size: 17px; color: #b8962e; font-weight: 700; letter-spacing: 2px;
             padding-left: 14px; border-left: 2px solid #d4af37;
         }
         .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
         .nav-links a {
             font-size: 13px; color: #666; transition: color 0.3s;
             padding-bottom: 3px; border-bottom: 2px solid transparent;
-            letter-spacing: 1.5px; font-weight: 500;
+            letter-spacing: 1.5px; font-weight: 700;
         }
         .nav-links a:hover { color: #b8962e; border-bottom-color: #d4af37; }
 
@@ -53,7 +53,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: linear-gradient(150deg, #f5f6fa 0%, #eef0f5 40%, #e6e8f0 100%);
+            background: url('第一屏.png') center center / cover;
             padding: 90px 56px 0;
         }
         .hero-inner {
@@ -65,11 +65,11 @@
             flex: 1;
         }
 
-        .hero-headline { text-align: center; }
+        .hero-headline { text-align: center; margin-bottom: 20px; }
         .hero-headline .big {
-            font-size: clamp(44px, 6.4vw, 76px);
+            font-size: clamp(36px, 5vw, 60px);
             font-weight: 800;
-            line-height: 1.7;
+            line-height: 1.5;
             letter-spacing: 2px;
             color: #1a1a2e;
         }
@@ -78,52 +78,81 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .hero-headline { margin-bottom: 40px; }
 
-        .section-label-wrap { width: 100%; text-align: center; }
+        .section-label-wrap { width: 100%; text-align: center; margin-bottom: 12px; }
         .hero-section-label {
             display: inline-block;
-            font-size: 20px; font-weight: 700; color: #b8962e;
+            font-size: 22px; font-weight: 700; color: #b8962e;
             letter-spacing: 6px; text-align: center;
-            padding: 0 14px;
+            padding: 0 14px 6px;
             border-bottom: 2px solid rgba(212,175,55,0.25);
-            padding-bottom: 4px;
         }
 
-        .hero-products-wrap { width: 100%; margin-top: 30px; margin-bottom: -70px; }
+        .hero-products-wrap { width: 100%; margin-top: 10px; margin-bottom: 0; }
         .hero-products-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin-top: 8px;
+            gap: 12px;
+            margin-top: 0;
         }
         .hero-product-card {
-            background: rgba(255,255,255,0.88);
-            border: 1px solid #e4e6ee;
-            border-radius: 12px;
-            padding: 14px 8px 10px;
-            text-align: center;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 14px;
+            overflow: hidden;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
         }
         .hero-product-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
             border-color: #d4af37;
-            box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+            box-shadow: 0 12px 32px rgba(212,175,55,0.12);
         }
-        .hero-product-card .icon { font-size: 24px; display: block; margin-bottom: 4px; }
-        .hero-product-card h4 {
-            font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
-            color: #1a1a2e; margin-bottom: 8px; line-height: 1.5;
+        .hero-product-card .prod-img {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f8fa;
+            overflow: hidden;
+            flex-shrink: 0;
         }
-        .hero-product-card .btn-download-mini {
-            display: inline-flex; align-items: center; gap: 2px;
-            padding: 4px 12px; border: 1px solid #d4af37; border-radius: 100px;
-            color: #b8962e; font-size: 10px; transition: all 0.25s;
-            font-weight: 500; background: transparent; cursor: pointer;
+        .hero-product-card .prod-img img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
-        .hero-product-card .btn-download-mini:hover { background: rgba(212,175,55,0.1); }
-        .hero-product-card .btn-download-mini svg { width: 10px; height: 10px; fill: currentColor; }
+        .hero-product-card .prod-img .emoji-icon {
+            font-size: 44px;
+            opacity: 0.6;
+        }
+        .hero-product-card .prod-bottom {
+            padding: 10px 10px 12px;
+            display: flex;
+            justify-content: center;
+        }
+        .hero-product-card .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 6px 18px;
+            border: 1px solid #d4af37;
+            border-radius: 100px;
+            color: #b8962e;
+            font-size: 11px;
+            transition: all 0.25s;
+            font-weight: 600;
+            background: transparent;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+        .hero-product-card .btn-download:hover {
+            background: #d4af37;
+            color: #fff;
+        }
+        .hero-product-card .btn-download svg { width: 12px; height: 12px; fill: currentColor; }
 
         .fields-carousel-wrap {
             width: 100%;
@@ -154,7 +183,7 @@
             font-size: 28px; transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
             overflow: hidden;
         }
-        .fields-carousel-slide .field-item .field-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .fields-carousel-slide .field-item .field-icon img { width: 100%; height: auto; display: block; }
         .fields-carousel-slide .field-item:hover .field-icon {
             border-color: #d4af37; transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(212,175,55,0.15);
@@ -185,7 +214,7 @@
             display: flex; flex-direction: column;
             align-items: center; justify-content: flex-start;
             padding: 15vh 40px 60px;
-            background: linear-gradient(135deg, #0f1528 0%, #1a1f35 50%, #0f1528 100%);
+            background: url('第二屏.png') center center / cover;
         }
         .second-inner { width: 100%; max-width: 1000px; text-align: center; }
         .second-inner h2 {
@@ -216,11 +245,11 @@
             text-align: center; padding: 32px 40px 24px;
             border-top: 1px solid rgba(0,0,0,0.04); background: #f5f6fa;
         }
-        .footer .footer-company { font-size: 14px; font-weight: 600; color: #1a1a2e; letter-spacing: 2px; margin-bottom: 8px; }
-        .footer .footer-addr { font-size: 13px; color: #888; letter-spacing: 1px; margin-bottom: 4px; }
-        .footer .footer-web { font-size: 13px; color: #888; letter-spacing: 1px; margin-bottom: 8px; }
+        .footer .footer-company { font-size: 17px; font-weight: 600; color: #1a1a2e; letter-spacing: 2px; margin-bottom: 8px; }
+        .footer .footer-addr { font-size: 15px; color: #888; letter-spacing: 1px; margin-bottom: 4px; }
+        .footer .footer-web { font-size: 15px; color: #888; letter-spacing: 1px; margin-bottom: 8px; }
         .footer .footer-web a { color: #b8962e; font-weight: 500; }
-        .footer .footer-copy { font-size: 11px; color: #bbb; letter-spacing: 1.5px; margin-top: 4px; }
+        .footer .footer-copy { font-size: 13px; color: #bbb; letter-spacing: 1.5px; margin-top: 4px; }
 
         .float-contact { position: fixed; bottom: 32px; right: 32px; z-index: 9999; }
         .float-contact .contact-panel {
@@ -229,14 +258,14 @@
             padding: 18px 20px; width: 280px; box-shadow: 0 12px 40px rgba(0,0,0,0.1);
         }
         .float-contact .contact-panel .panel-title {
-            font-size: 14px; font-weight: 700; color: #b8962e;
+            font-size: 17px; font-weight: 700; color: #b8962e;
             letter-spacing: 2px; margin-bottom: 12px;
             padding-bottom: 10px; border-bottom: 1px solid #f0f0f0;
             display: flex; align-items: center; gap: 6px;
         }
         .float-contact .contact-panel .panel-item {
             display: flex; align-items: center; gap: 10px;
-            margin-bottom: 8px; color: #555; font-size: 13px;
+            margin-bottom: 8px; color: #555; font-size: 15px;
         }
         .float-contact .contact-panel .panel-item:last-child { margin-bottom: 0; }
         .float-contact .contact-panel .panel-item .icon {
@@ -246,7 +275,7 @@
         }
         .float-contact .contact-panel .panel-item a { color: #b8962e; font-weight: 500; transition: opacity 0.3s; }
         .float-contact .contact-panel .panel-item a:hover { opacity: 0.7; }
-        .float-contact .contact-panel .panel-item .name { color: #888; font-size: 11px; }
+        .float-contact .contact-panel .panel-item .name { color: #888; font-size: 13px; }
 
         .fade-in { opacity: 0; transform: translateY(24px); transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -257,8 +286,10 @@
             .nav-links { display: none; }
             .logo-slogan { display: none; }
             .hero { padding: 56px 16px 0; }
-            .hero-products-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
-            .hero-product-card { padding: 8px 4px 6px; }
+            .hero-headline .big { font-size: clamp(24px, 5vw, 32px); }
+            .hero-products-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .hero-product-card .prod-img { aspect-ratio: 4 / 3; }
+            .hero-product-card .prod-img .emoji-icon { font-size: 32px; }
             .fields-carousel-slide { gap: 8px; }
             .fields-carousel-slide .field-item { width: 90px; }
             .fields-carousel-slide .field-item .field-icon { width: 90px; height: 60px; font-size: 22px; }
@@ -290,53 +321,70 @@
                     <div class="hero-section-label">✦ 八大产品线</div>
                 </div>
                 <div class="hero-products-grid">
+                    <!-- 液态铝电解电容器 -->
                     <div class="hero-product-card">
-                        <span class="icon">⚡</span><h4>液态铝电解电容器</h4>
-                        <button class="btn-download-mini" onclick="alert('手册下载中…')">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册
-                        </button>
+                        <div class="prod-img"><img src="液态铝电解电容.png" alt="液态铝电解电容器"></div>
+                        <div class="prod-bottom">
+                            <button class="btn-download" onclick="alert('手册下载中…')">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册下载
+                            </button>
+                        </div>
                     </div>
                     <div class="hero-product-card">
-                        <span class="icon">🔋</span><h4>双电层超级电容</h4>
-                        <button class="btn-download-mini" onclick="alert('手册下载中…')">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册
-                        </button>
+                        <div class="prod-img"><span class="emoji-icon">🔋</span></div>
+                        <div class="prod-bottom">
+                            <button class="btn-download" onclick="alert('手册下载中…')">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册下载
+                            </button>
+                        </div>
                     </div>
                     <div class="hero-product-card">
-                        <span class="icon">🧪</span><h4>高分子固态铝电解电容器</h4>
-                        <button class="btn-download-mini" onclick="alert('手册下载中…')">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册
-                        </button>
+                        <div class="prod-img"><span class="emoji-icon">🧪</span></div>
+                        <div class="prod-bottom">
+                            <button class="btn-download" onclick="alert('手册下载中…')">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册下载
+                            </button>
+                        </div>
                     </div>
                     <div class="hero-product-card">
-                        <span class="icon">🔬</span><h4>混合型超级电容</h4>
-                        <button class="btn-download-mini" onclick="alert('手册下载中…')">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册
-                        </button>
+                        <div class="prod-img"><span class="emoji-icon">🔬</span></div>
+                        <div class="prod-bottom">
+                            <button class="btn-download" onclick="alert('手册下载中…')">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册下载
+                            </button>
+                        </div>
                     </div>
                     <div class="hero-product-card">
-                        <span class="icon">⚙️</span><h4>高分子混合动力铝电解电容器</h4>
-                        <button class="btn-download-mini" onclick="alert('手册下载中…')">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册
-                        </button>
+                        <div class="prod-img"><span class="emoji-icon">⚙️</span></div>
+                        <div class="prod-bottom">
+                            <button class="btn-download" onclick="alert('手册下载中…')">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册下载
+                            </button>
+                        </div>
                     </div>
                     <div class="hero-product-card">
-                        <span class="icon">📐</span><h4>叠层高分子固态铝电解电容器</h4>
-                        <button class="btn-download-mini" onclick="alert('手册下载中…')">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册
-                        </button>
+                        <div class="prod-img"><span class="emoji-icon">📐</span></div>
+                        <div class="prod-bottom">
+                            <button class="btn-download" onclick="alert('手册下载中…')">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册下载
+                            </button>
+                        </div>
                     </div>
                     <div class="hero-product-card">
-                        <span class="icon">💡</span><h4>薄膜电容器</h4>
-                        <button class="btn-download-mini" onclick="alert('手册下载中…')">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册
-                        </button>
+                        <div class="prod-img"><span class="emoji-icon">💡</span></div>
+                        <div class="prod-bottom">
+                            <button class="btn-download" onclick="alert('手册下载中…')">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册下载
+                            </button>
+                        </div>
                     </div>
                     <div class="hero-product-card">
-                        <span class="icon">🔶</span><h4>导电高分子钽电解电容器</h4>
-                        <button class="btn-download-mini" onclick="alert('手册下载中…')">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册
-                        </button>
+                        <div class="prod-img"><span class="emoji-icon">🔶</span></div>
+                        <div class="prod-bottom">
+                            <button class="btn-download" onclick="alert('手册下载中…')">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册下载
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -347,7 +395,7 @@
                 </div>
                 <div class="fields-carousel-track" id="fieldsTrack">
                     <div class="fields-carousel-slide">
-                        <div class="field-item"><div class="field-icon">🛩️</div><span>航空电子</span></div>
+                        <div class="field-item"><div class="field-icon"><img src="战斗机.png" alt="战斗机"></div><span>航空电子</span></div>
                         <div class="field-item"><div class="field-icon">🚀</div><span>导弹系统</span></div>
                         <div class="field-item"><div class="field-icon">🛰️</div><span>卫星通信</span></div>
                         <div class="field-item"><div class="field-icon">⚓</div><span>舰船电子</span></div>
