@@ -94,19 +94,21 @@
             margin-top: 0;
         }
         .hero-product-card {
-            background: #fff;
-            border: 1px solid #eee;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 14px;
             overflow: hidden;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.20);
             display: flex;
             flex-direction: column;
         }
         .hero-product-card:hover {
             transform: translateY(-4px);
             border-color: #d4af37;
-            box-shadow: 0 12px 32px rgba(212,175,55,0.12);
+            box-shadow: 0 12px 32px rgba(212,175,55,0.25);
         }
         .hero-product-card .prod-img {
             width: 100%;
@@ -114,7 +116,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #f8f8fa;
+            background: rgba(255, 255, 255, 0.04);
             overflow: hidden;
             flex-shrink: 0;
         }
@@ -324,7 +326,7 @@
                 <div class="hero-products-grid">
                     <!-- 1、液态铝电解电容器 -->
                     <div class="hero-product-card">
-                        <div class="prod-img"><img src="1、液态铝电解电容.png" alt="液态铝电解电容器"></div>
+                        <div class="prod-img"><img src="1.png" alt="液态铝电解电容器"></div>
                         <div class="prod-bottom">
                             <button class="btn-download" onclick="alert('手册下载中…')">
                                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册下载
@@ -333,7 +335,7 @@
                     </div>
                     <!-- 2、高分子固态铝电解电容器 -->
                     <div class="hero-product-card">
-                        <div class="prod-img"><img src="2、高分子固态铝电解电容器.png" alt="高分子固态铝电解电容器"></div>
+                        <div class="prod-img"><img src="2.png" alt="高分子固态铝电解电容器"></div>
                         <div class="prod-bottom">
                             <button class="btn-download" onclick="alert('手册下载中…')">
                                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册下载
@@ -342,7 +344,7 @@
                     </div>
                     <!-- 3、高分子混合动力铝电解电容器 -->
                     <div class="hero-product-card">
-                        <div class="prod-img"><img src="3、高分子混合动力铝电解电容器.png" alt="高分子混合动力铝电解电容器"></div>
+                        <div class="prod-img"><img src="3.png" alt="高分子混合动力铝电解电容器"></div>
                         <div class="prod-bottom">
                             <button class="btn-download" onclick="alert('手册下载中…')">
                                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册下载
@@ -351,7 +353,7 @@
                     </div>
                     <!-- 4、叠层高分子固态铝电解电容器 -->
                     <div class="hero-product-card">
-                        <div class="prod-img"><img src="4、叠层高分子固态铝电解电容器.png" alt="叠层高分子固态铝电解电容器"></div>
+                        <div class="prod-img"><img src="4.png" alt="叠层高分子固态铝电解电容器"></div>
                         <div class="prod-bottom">
                             <button class="btn-download" onclick="alert('手册下载中…')">
                                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册下载
@@ -360,7 +362,7 @@
                     </div>
                     <!-- 5、导电高分子铝电解电容器 -->
                     <div class="hero-product-card">
-                        <div class="prod-img"><img src="5、导电高分子铝电解电容器.png" alt="导电高分子铝电解电容器"></div>
+                        <div class="prod-img"><img src="5.png" alt="导电高分子铝电解电容器"></div>
                         <div class="prod-bottom">
                             <button class="btn-download" onclick="alert('手册下载中…')">
                                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册下载
@@ -369,7 +371,7 @@
                     </div>
                     <!-- 6、混合型超级电容器 -->
                     <div class="hero-product-card">
-                        <div class="prod-img"><img src="6、混合型超级电容器.png" alt="混合型超级电容器"></div>
+                        <div class="prod-img"><img src="6.png" alt="混合型超级电容器"></div>
                         <div class="prod-bottom">
                             <button class="btn-download" onclick="alert('手册下载中…')">
                                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册下载
@@ -378,7 +380,7 @@
                     </div>
                     <!-- 7、双电层超级电容器 -->
                     <div class="hero-product-card">
-                        <div class="prod-img"><img src="7、双电层超级电容器.png" alt="双电层超级电容器"></div>
+                        <div class="prod-img"><img src="7.png" alt="双电层超级电容器"></div>
                         <div class="prod-bottom">
                             <button class="btn-download" onclick="alert('手册下载中…')">
                                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册下载
@@ -387,7 +389,7 @@
                     </div>
                     <!-- 8、金属化聚丙乙烯薄膜电容器 -->
                     <div class="hero-product-card">
-                        <div class="prod-img"><img src="8、金属化聚丙乙烯薄膜电容器.png" alt="金属化聚丙乙烯薄膜电容器"></div>
+                        <div class="prod-img"><img src="8.png" alt="金属化聚丙乙烯薄膜电容器"></div>
                         <div class="prod-bottom">
                             <button class="btn-download" onclick="alert('手册下载中…')">
                                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/><path d="M12 17l-4-4h2.5V9h3v4H16l-4 4z"/></svg> 手册下载
